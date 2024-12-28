@@ -156,19 +156,19 @@ body {
 .media_icon1 {
     width: min(6vh, 4vw);
     cursor: pointer;
-    animation: zoomIn 0.8s forwards; 
+    animation: appear 0.8s forwards; 
 }
 
 .media_icon2 {
     width: min(6vh, 4vw);
     cursor: pointer;
-    animation: zoomIn 1.2s forwards; 
+    animation: appear 1.2s forwards; 
 }
 
 .media_icon3 {
     width: min(6vh, 4vw);
     cursor: pointer;
-    animation: zoomIn 1.6s forwards; 
+    animation: appear 1.6s forwards; 
 }
 
 .media_icon1:hover,
@@ -176,17 +176,6 @@ body {
 .media_icon3:hover {
     transform: scale(1.2) !important;
     transition: transform 0.3s ease-in-out;
-}
-
-@keyframes zoomIn {
-    from {
-        transform: scale(0.5);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
 }
 
 
@@ -215,6 +204,39 @@ body {
 
 .about_text a {
     color: var(--main);
+}
+
+.images {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 25vw;
+    gap: 10vw;
+}
+
+.image1 {
+    height: 21vw;
+    border: 5px solid;
+    border-color: #edcc55;
+    border-radius: 3px;
+    animation: appear 1s forwards;
+}
+
+.image2 {
+    height: 21vw;
+    border: 5px solid;
+    border-color: #738d55;
+    border-radius: 3px;
+    margin-top: 3vw;
+    animation: appear 1.5s forwards;
+}
+
+.image3 {
+    height: 21vw;
+    border: 5px solid;
+    border-color: var(--main);
+    border-radius: 3px;
+    animation: appear 2s forwards;
 }
 
 @media (max-width: 600px) {
@@ -292,6 +314,7 @@ body {
         font-size: 12vw;
         color: var(--main);
         position: relative;
+        margin-top: 10px;
         animation: slideInLeft 2s forwards;
     }
 
@@ -306,17 +329,17 @@ body {
     
     .media_icon1 {
         width: 4vh;
-        animation: zoomIn 0.8s forwards; 
+        animation: appear 0.8s forwards; 
     }
     
     .media_icon2 {
         width: 4vh;
-        animation: zoomIn 1.2s forwards; 
+        animation: appear 1.2s forwards; 
     }
     
     .media_icon3 {
         width: 4vh;
-        animation: zoomIn 1.6s forwards; 
+        animation: appear 1.6s forwards; 
     }
 
     .about_text {
@@ -329,6 +352,32 @@ body {
     
     .about_text a {
         color: var(--main);
+    }
+
+    .images {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        height: 30vh;
+        gap: 10vw;
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+    
+    .image1 {
+        height: 30vh;
+        border: 5px solid;
+        border-color: var(--main);
+        border-radius: 3px;
+        animation: appear 1s forwards;
+    }
+    
+    .image2 {
+        display: none;
+    }
+    
+    .image3 {
+        display: none;
     }
     
 }
