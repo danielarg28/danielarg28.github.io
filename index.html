@@ -6,7 +6,18 @@
     <title>danielarg</title>
     <link rel="icon" href="media/icon.png" class="icon">   
     <link rel="stylesheet" href="styling.css">
-    <script src="scripts.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init({
+              publicKey: "-XWVqkjq_nCS1CFnA",
+            });
+        })();
+    </script>
+    <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script src="script.js"></script>
 </head>
 <body>
     <div class="navbar">
@@ -61,6 +72,27 @@
                 pasearlos cuando tengo tiempo libre.
         </div>
     </div>
+    <div class="gallery_title">Galería</div>
+    <div class="gallery">
+        <button id="backwards" onclick="changeImageBackwards()" class="backwards">
+            <img src="/media/leftArrow.png">
+        </button>
+        <img id="photo" class="photo" src="/gallery/1.JPG">
+        <button id="forward" onclick="changeImageForward()" class="forwards">
+            <img src="/media/rightArrow.png">
+        </button>
+    </div>
+    <div class="contact">
+        <div class="contact_title">Contacto</div>
+        <form id="contact-form" class="contact_form">
+            <input class="name_input" type="text" name="user_name" placeholder=" Nombre" required>
+            <input class="email_input" type="email" type="email" name="user_email" placeholder=" E-mail" required>
+            <input class="message_input" type="text" name="message" placeholder=" Mensaje" required></textarea>
+            <button type="submit" class="submit_button">
+                <img src="media/send.png" alt="send" class="submit_button_icon">
+            </button>
+        </form>
+        <div id="sent_message" style="display: none;">¡Mensaje enviado!</div>
     </div>
 </body>
 </html>

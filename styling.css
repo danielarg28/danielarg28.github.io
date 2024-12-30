@@ -15,7 +15,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-    background-color: #f5f5f5;
+    background-color: #ffffff;
 }
 
 @font-face {
@@ -149,7 +149,7 @@ body {
     flex-direction: row;
     height: min(6vh, 6vw);
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 22px;
     gap: 1.5vw;
 }
 
@@ -237,6 +237,190 @@ body {
     border-color: var(--main);
     border-radius: 3px;
     animation: appear 2s forwards;
+}
+
+.gallery_title {
+    font-family: brownSugar;
+    font-size: 6vw;
+    color: var(--main);
+    position: relative;
+    animation: slideInLeft 2s forwards;
+    margin-left: 5vw;
+}
+
+.gallery {
+    margin-left: 5vw;
+    margin-top: 2vw;
+    display: flex;
+    flex-direction: row;
+    width: 90vw;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw
+}
+
+.photo {
+    width: 40vw;
+    height: 30vw; 
+    object-fit: contain;
+}
+
+.forwards {
+    width: 5vw;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.forwards:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.forwards:active {
+    transform: translate(0,5px);
+    transition: transform 0.15s ease-in-out;
+}
+
+.backwards {
+    width: 5vw;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff; 
+    border: none;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.backwards:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.backwards:active {
+    transform: translate(0,5px);
+    transition: transform 0.15s ease-in-out;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10vw;
+    width: 100vw;
+    background-color: var(--main);
+    -webkit-box-shadow: -1px -13px 72px -38px rgba(0,0,0,1);
+    -moz-box-shadow: -1px -13px 72px -38px rgba(0,0,0,1);
+    box-shadow: -1px -13px 72px -38px rgba(0,0,0,1);   
+}
+
+.contact_title {
+    font-family: brownSugar;
+    font-size: 6vw;
+    margin-left: 5vw;
+    margin-top: 5vw;
+    color: #ffffff;
+    position: relative;
+    animation: slideInLeft 2s forwards;
+}
+
+.contact_text {
+    font-family: mirage, sans-serif;
+    font-weight: 100;
+    font-size: min(18px, 1.8vw);
+    text-align: justify;
+    color: #ffffff;
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+.contact_form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2vw;
+    margin-left: 5vw;
+    gap: 2vw;
+}
+
+.name_input {
+    width: 20vw;
+    height: max(2vw,3vh);
+}
+
+.email_input {
+    width: 20vw;
+    height: max(2vw,3vh);
+}
+
+.message_input {
+    width: 90vw;
+    height: max(5vw,6vh);
+}
+
+.submit_button {
+    all: unset;
+    width: 5vw;
+    background: none;
+    border: none;
+    padding: 0;
+    align-self: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.submit_button:hover{
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.submit_button_icon {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+input::placeholder, textarea::placeholder {
+    color: var(--main); /* Color gris */
+    font-size: 16px; /* Tamaño de la fuente */
+    font-family: 'Courier New', Courier, monospace; /* Fuente monoespaciada */
+    opacity: 0.7; /* Hacerlo un poco más translúcido */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* TODO */
+.sent_message {
+    display: none; /* Mantiene el mensaje oculto por defecto */
+    background-color: #ffffff;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+    transition: opacity 1s ease-in-out; /* Para la animación */
 }
 
 @media (max-width: 600px) {
@@ -379,5 +563,28 @@ body {
     .image3 {
         display: none;
     }
+
+    .gallery_title {
+        font-family: brownSugar;
+        font-size: 12vw;
+        color: var(--main);
+        position: relative;
+        margin-top: 20px;
+        animation: slideInLeft 2s forwards;
+    }
     
+    .photo {
+        margin-top: 15px;
+        width: 60vw;
+        height: 70vw; 
+        object-fit: contain;
+    }
+
+    .forwards {
+        margin-left: 20px;
+    }
+    
+    .backwards {
+        margin-right: 20px;
+    }
 }
