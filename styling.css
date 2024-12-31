@@ -311,7 +311,7 @@ body {
 }
 
 .gallery_title {
-    font-family: brownSugar;
+    font-family: brownSugar; 
     font-size: 6vw;
     color: var(--main);
     position: relative;
