@@ -16,6 +16,7 @@ body {
     padding: 0;
     font-family: 'Roboto', sans-serif;
     background-color: #ffffff;
+    overflow-x: hidden;
 }
 
 @font-face {
@@ -68,6 +69,7 @@ body {
     margin-right: 15px;
 }
 .dropdown {
+    display: none;
     width: 50px;
     height: auto;
 }
@@ -90,10 +92,10 @@ body {
     font-size: 7vw;
     color: var(--main);
     position: relative;
-    animation: slideInRigth 2s forwards;
+    animation: slideInRight 2s forwards;
 }
 
-@keyframes slideInRigth {
+@keyframes slideInRight {
     from {
         right: -20%;
         opacity: 0;
@@ -116,6 +118,15 @@ body {
 }
 
 @keyframes appear {
+    0% {
+        opacity: 0;          
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes appearImages {
     from {
         opacity: 0;
         transform: scale(0.4);
@@ -131,7 +142,7 @@ body {
     font-size: 2vw;
     margin-top: 0.5vw;
     color: var(--yellow);
-    animation: slideInRigth 2s forwards;
+    animation: slideInRight 2s forwards;
 }
 
 .taps {
@@ -153,31 +164,36 @@ body {
     gap: 1.5vw;
 }
 
-.media_icon1 {
+.media_icon1, .media_icon2, .media_icon3 {
+    display: inline-block;
     width: min(6vh, 4vw);
     cursor: pointer;
-    animation: appear 0.8s forwards; 
+}
+
+.media_icon1 {
+    animation: appear 0.8s ease-in-out forwards;; 
 }
 
 .media_icon2 {
-    width: min(6vh, 4vw);
-    cursor: pointer;
-    animation: appear 1.2s forwards; 
+    animation: appear 1.2s ease-in-out forwards;; 
 }
 
 .media_icon3 {
-    width: min(6vh, 4vw);
-    cursor: pointer;
-    animation: appear 1.6s forwards; 
+    animation: appear 1.6s ease-in-out forwards;
 }
 
-.media_icon1:hover,
-.media_icon2:hover,
-.media_icon3:hover {
-    transform: scale(1.2) !important;
+.media_icon_animation {
+    display: inline-block;
+    width: min(6vh, 4vw);
+    height: min(6vh, 4vw);
+    cursor: pointer;
     transition: transform 0.3s ease-in-out;
 }
 
+.media_icon_animation:hover {
+    transform: scale(1.1) !important;
+    transition: transform 0.3s ease-in-out !important;
+}
 
 .about {
     display: flex;
@@ -219,7 +235,7 @@ body {
     border: 5px solid;
     border-color: #edcc55;
     border-radius: 3px;
-    animation: appear 1s forwards;
+    animation: appearImages 1s forwards;
 }
 
 .image2 {
@@ -228,7 +244,7 @@ body {
     border-color: #738d55;
     border-radius: 3px;
     margin-top: 3vw;
-    animation: appear 1.5s forwards;
+    animation: appearImages 1.5s forwards;
 }
 
 .image3 {
@@ -236,7 +252,7 @@ body {
     border: 5px solid;
     border-color: var(--main);
     border-radius: 3px;
-    animation: appear 2s forwards;
+    animation: appearImages 2s forwards;
 }
 
 .gallery_title {
@@ -349,18 +365,39 @@ body {
 }
 
 .name_input {
-    width: 20vw;
-    height: max(2vw,3vh);
+    width: 25vw;
+    font-size: 16px; 
+    font-family: 'Courier New', Courier, monospace;
+    height: max(2.5vw,3vh);
+    padding-left: 15px;
+}
+
+.name_input:disabled {
+    background-color: #ffffffb6;
 }
 
 .email_input {
-    width: 20vw;
-    height: max(2vw,3vh);
+    width: 25vw;
+    font-size: 16px; 
+    font-family: 'Courier New', Courier, monospace;
+    height: max(2.5vw,3vh);
+    padding-left: 15px;
+}
+
+.email_input:disabled {
+    background-color: #ffffffb6;
 }
 
 .message_input {
-    width: 90vw;
+    width: 88vw;
+    font-size: 16px; 
+    font-family: 'Courier New', Courier, monospace;
     height: max(5vw,6vh);
+    padding:15px;
+}
+
+.message_input:disabled {
+    background-color: #ffffffb6;
 }
 
 .submit_button {
@@ -368,15 +405,15 @@ body {
     width: 5vw;
     background: none;
     border: none;
+    margin-right: 5vw;
     padding: 0;
     align-self: center;
     transition: transform 0.3s ease-in-out;
 }
 
-.submit_button:hover{
-    transform: scale(1.1);
-    transition: transform 0.3s ease-in-out;
+.submit_button:hover {
     cursor: pointer;
+    filter: grayscale(100%);
 }
 
 .submit_button_icon {
@@ -391,36 +428,85 @@ body {
     transition: transform 0.3s ease-in-out;
 }
 
-input::placeholder, textarea::placeholder {
-    color: var(--main); /* Color gris */
-    font-size: 16px; /* Tamaño de la fuente */
-    font-family: 'Courier New', Courier, monospace; /* Fuente monoespaciada */
-    opacity: 0.7; /* Hacerlo un poco más translúcido */
+input::placeholder {
+    color: var(--main); 
+    font-size: 16px; 
+    font-family: 'Courier New', Courier, monospace;
+    opacity: 0.7; 
 }
 
-@keyframes fadeIn {
+.message {
+    align-self: center;
+    font-family: 'Courier New', Courier, monospace;
+    animation: slideInDown 4s forwards;
+    position: relative; 
+    text-align: center;
+    color: white;
+    font-size: 16px;
+  }
+
+.message_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+}  
+  
+  @keyframes slideInDown {
     0% {
-        opacity: 0;
+      top: -20%;
+      opacity: 0;
     }
     50% {
-        opacity: 1;
+      opacity: 1;
+      top: 0;
     }
     100% {
-        opacity: 0;
+      top: 0;
+      opacity: 0;
+    }
+  }
+
+@keyframes rotateAndMove {
+    0% {
+        transform: rotate(0deg) translateX(0);
+    }
+    25% {
+        transform: rotate(-20deg); 
+    }
+    50% {
+        transform: rotate(0deg); 
+    }
+    100% {
+        transform: rotate(0deg) translateX(100vw);
     }
 }
 
-/* TODO */
-.sent_message {
-    display: none; /* Mantiene el mensaje oculto por defecto */
-    background-color: #ffffff;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    margin-top: 20px;
-    font-size: 16px;
-    transition: opacity 1s ease-in-out; /* Para la animación */
+.submit_button_sent {
+    animation: rotateAndMove 2s forwards ease-out;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(-15deg) scale(1);
+    }
+    25% {
+        transform: rotate(15deg) scale(1.1);
+    }
+    50% {
+        transform: rotate(-15deg) scale(1.1);
+    }
+    75% {
+        transform: rotate(15deg) scale(1.1);
+    }
+    100% {
+        transform: rotate(0deg) scale(1);
+    }
+}
+
+.submit_button_not_sent {
+    animation: rotate 1.2s forwards ease-out;
 }
 
 @media (max-width: 600px) {
@@ -449,6 +535,7 @@ input::placeholder, textarea::placeholder {
         margin-right: 15px;
     }
     .dropdown {
+        display: block;
         width: 30px;
         height: auto;
     }
@@ -471,7 +558,7 @@ input::placeholder, textarea::placeholder {
         font-size: 8.5vh;
         color: var(--main);
         position: relative;
-        animation: slideInRigth 2s forwards;
+        animation: slideInRight 2s forwards;
     }
 
     .taps {
@@ -490,7 +577,7 @@ input::placeholder, textarea::placeholder {
         font-size: 2vh;
         margin-top: 0.5vw;
         color: var(--yellow);
-        animation: slideInRigth 2s forwards;
+        animation: slideInRight 2s forwards;
     }
 
     .about_title {
@@ -553,7 +640,7 @@ input::placeholder, textarea::placeholder {
         border: 5px solid;
         border-color: var(--main);
         border-radius: 3px;
-        animation: appear 1s forwards;
+        animation: appearImages 1s forwards;
     }
     
     .image2 {

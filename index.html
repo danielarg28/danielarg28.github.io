@@ -36,13 +36,13 @@
     </div>
     <div class="media">
         <a href="https://www.instagram.com/d.riv.en?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
-            <img src="media/instagram.png" alt="instagram" class="media_icon1">
+            <img src="media/instagram.png" alt="instagram" class="media_icon1" id="instagram">
         </a>
         <a href="https://www.behance.net/danielarg2/appreciated" target="_blank">
-            <img src="media/behance.png" alt="behance" class="media_icon2">
+            <img src="media/behance.png" alt="behance" class="media_icon2" id="behance">
         </a> 
         <a href="https://www.rover.com/members/daniela-r-mi-vida-son-los-perros-mi-pasion-es-cuidarlos/" target="_blank">
-            <img src="media/rover.png" alt="rover" class="media_icon3">
+            <img src="media/rover.png" alt="rover" class="media_icon3" id="rover">
         </a> 
     </div>
     <div class="about">
@@ -85,14 +85,17 @@
     <div class="contact">
         <div class="contact_title">Contacto</div>
         <form id="contact-form" class="contact_form">
-            <input class="name_input" type="text" name="user_name" placeholder=" Nombre" required>
-            <input class="email_input" type="email" type="email" name="user_email" placeholder=" E-mail" required>
-            <input class="message_input" type="text" name="message" placeholder=" Mensaje" required></textarea>
-            <button type="submit" class="submit_button">
+            <input class="name_input" type="text" name="user_name" placeholder="Nombre" required>
+            <input class="email_input" type="email" type="email" name="user_email" placeholder="E-mail" required>
+            <textarea class="message_input" type="text" name="message" placeholder="Mensaje" required></textarea>
+            <button type="submit" class="submit_button" id="submit_button">
                 <img src="media/send.png" alt="send" class="submit_button_icon">
             </button>
         </form>
-        <div id="sent_message" style="display: none;">¡Mensaje enviado!</div>
+        <di class="message_container">
+            <div id="message" style="display: none;"></div>
+        </div>
+        
     </div>
 </body>
 </html>
