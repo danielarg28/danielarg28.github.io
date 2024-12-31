@@ -39,6 +39,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     padding-bottom: 10px;
+    padding-top: 10px;
     -webkit-box-shadow: 0px 11px 15px -1px rgba(0,0,0,0.07);
     -moz-box-shadow: 0px 11px 15px -1px rgba(0,0,0,0.07);
     box-shadow: 0px 11px 15px -1px rgba(0,0,0,0.07);
@@ -50,7 +51,6 @@ body {
     justify-content: center;
     align-items: center;
     width: 100px;
-    margin-top: 10px;
     margin-left: 10px;
 }
 
@@ -62,15 +62,18 @@ body {
 .dropdown_container {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    width: 70px;
-    margin-top: 10px;
-    margin-right: 15px;
+    width: 300px;
+    margin-right: 40px;
+    font-family: mirage, "Times New Roman", sans-serif;
+    font-size: 20px ;
+    color: #3d4733;
 }
+
 .dropdown {
     display: none;
-    width: 50px;
+    width: 30px;
     height: auto;
 }
 
@@ -453,20 +456,24 @@ input::placeholder {
     height: 20px;
 }  
   
-  @keyframes slideInDown {
+@keyframes slideInDown {
     0% {
-      top: -20%;
-      opacity: 0;
+        top: -30%; 
+        opacity: 0;
     }
-    50% {
-      opacity: 1;
-      top: 0;
+    30% {
+        top: 0; 
+        opacity: 1;
+    }
+    70% {
+        top: 0; 
+        opacity: 1;
     }
     100% {
-      top: 0;
-      opacity: 0;
+        top: 0; 
+        opacity: 0;
     }
-  }
+}
 
 @keyframes rotateAndMove {
     0% {
@@ -509,6 +516,21 @@ input::placeholder {
     animation: rotate 1.2s forwards ease-out;
 }
 
+.footer {
+    height: 90px;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: flex-end;
+}
+
+.footer_text {
+    margin-bottom: 8px;
+    font-family: 'Courier New';
+    font-size: min(18px, 1.8vw);
+    color: #ffffff;
+}
+
 @media (max-width: 600px) {
     .logo_container {
         display: flex;
@@ -516,7 +538,6 @@ input::placeholder {
         justify-content: center;
         align-items: center;
         width: 50px;
-        margin-top: 10px;
         margin-left: 10px;
     }
     
@@ -526,14 +547,9 @@ input::placeholder {
     }
     
     .dropdown_container {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        width: 50px;
-        margin-top: 10px;
-        margin-right: 15px;
+        display: none;
     }
+
     .dropdown {
         display: block;
         width: 30px;
@@ -673,5 +689,60 @@ input::placeholder {
     
     .backwards {
         margin-right: 20px;
+    }
+
+    .contact_title {
+        font-family: brownSugar;
+        font-size: 12vw;
+        color: #ffffff;
+        position: relative;
+        margin-top: 20px;
+        animation: slideInLeft 2s forwards;
+    }
+
+    .name_input {
+        width: 60vw;
+        font-size: 14px;
+        padding-left: 6px;
+    }
+    
+    .email_input {
+        width: 60vw;
+        font-size: 14px;
+        padding-left: 6px;
+    }
+    
+    .message_input {
+        width: 80vw;
+        font-size: 14px;
+        padding-left: 6px;
+        padding-top: 6px;
+    }
+
+    .contact_form {
+        display: flex;
+        flex-direction: column;
+        margin-top: 4vw;
+        margin-left: 5vw;
+        gap: 5vw;
+    }
+
+    .submit_button {
+        width: 14vw;
+    }
+
+    .footer {
+        height: 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content:center;
+        align-items: flex-end;
+    }
+    
+    .footer_text {
+        margin-bottom: 8px;
+        font-family: 'Courier New';
+        font-size: 15px;
+        color: #ffffff;
     }
 }

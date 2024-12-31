@@ -23,6 +23,11 @@
     <div class="navbar">
         <div class="logo_container"><img src="media/logo.png" alt="logo" class="logo"></div>
         <div class="dropdown_container"><img src="media/dropdown.png" alt="dropdown" class="dropdown"></div>
+        <div class="dropdown_container">
+            <a href="#about">Sobre mí</a>
+            <a href="#gallery">Galería</a>
+            <a href="#contact">Contacto</a>
+        </div>
     </div>
     <div class="content">
         <img src="media/taps.jpg" alt="logo" class="taps">
@@ -46,6 +51,7 @@
         </a> 
     </div>
     <div class="about">
+        <div id="about"></div>
         <div class="about_title">Sobre mí</div>
         <div class="about_text">Actualmente estoy estudiando una ingeniería en diseño industrial y desarrollo de productos. 
             Me considero una persona dedicada y comprometida con mis metas, 
@@ -55,7 +61,7 @@
             <a href="https://www.onedaydesignchallenge.net/es#introduction" target="_blank" style="text-decoration: underline;">One Day Design Roca</a>,
             <a href="https://andreuworld.com/es/talento/concurso-diseno" target="_blank" style="text-decoration: underline;">Andreu World</a> o próximamente a 
             <a href="https://ifdesign.com/es/" target="_blank" style="text-decoration: underline;">IF Design</a>, 
-            o también en las diferentes becas de formación que he obtenido, 
+            o también en las diferentes becas de formación que he obtenido,
             viajando a Canadá en 2019 y Croacia en 2021.
         </div>
     </div>
@@ -71,8 +77,9 @@
                 Además, soy una persona apasionada por los perros y me ofrezco voluntaria a 
                 pasearlos cuando tengo tiempo libre.
         </div>
+    <div id="gallery"></div>
     </div>
-    <div class="gallery_title">Galería</div>
+    <div class="gallery_title" id="gallery">Galería</div>
     <div class="gallery">
         <button id="backwards" onclick="changeImageBackwards()" class="backwards">
             <img src="/media/leftArrow.png">
@@ -82,7 +89,7 @@
             <img src="/media/rightArrow.png">
         </button>
     </div>
-    <div class="contact">
+    <div class="contact" id="contact">
         <div class="contact_title">Contacto</div>
         <form id="contact-form" class="contact_form">
             <input class="name_input" type="text" name="user_name" placeholder="Nombre" required>
@@ -92,8 +99,11 @@
                 <img src="media/send.png" alt="send" class="submit_button_icon">
             </button>
         </form>
-        <di class="message_container">
+        <div class="message_container">
             <div id="message" style="display: none;"></div>
+        </div>
+        <div class="footer">
+            <div class="footer_text">From the desk of <a href="https://github.com/daniherurb"><u>@daniherurb</u></a></div>
         </div>
         
     </div>

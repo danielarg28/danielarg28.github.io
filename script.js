@@ -1,4 +1,4 @@
-emailjs.init('XWVqkjq_nCS1CFnA');
+emailjs.init('-XWVqkjq_nCS1CFnA');
 var currentImageIndex = 1
 const totalImages = 16
 
@@ -26,6 +26,9 @@ function changeImageBackwards() {
 function buttonAnimation(succesful) {
   const sentMessageButton = document.getElementById('submit_button');
   succesful ? sentMessageButton.classList.add('submit_button_sent') : sentMessageButton.classList.add('submit_button_not_sent')
+  setTimeout(() => {
+    sentMessageButton.classList.remove('submit_button_not_sent');
+  }, 4000);
 }
 
 function showMessage(messageText) {
