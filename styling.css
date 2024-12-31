@@ -34,6 +34,100 @@ body {
     src: url(fonts/Bethany\ Elingston.otf)
 }
 
+@keyframes slideInRight {
+    from {
+        right: -20%;
+        opacity: 0;
+    }
+    to {
+        right: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        left: -20%;
+        opacity: 0;
+    }
+    to {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;          
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes appearImages {
+    from {
+        opacity: 0;
+        transform: scale(0.4);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInDown {
+    0% {
+        top: -30%; 
+        opacity: 0;
+    }
+    30% {
+        top: 0; 
+        opacity: 1;
+    }
+    70% {
+        top: 0; 
+        opacity: 1;
+    }
+    100% {
+        top: 0; 
+        opacity: 0;
+    }
+}
+
+@keyframes rotateAndMove {
+    0% {
+        transform: rotate(0deg) translateX(0);
+    }
+    25% {
+        transform: rotate(-20deg); 
+    }
+    50% {
+        transform: rotate(0deg); 
+    }
+    100% {
+        transform: rotate(0deg) translateX(100vw);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(-15deg) scale(1);
+    }
+    25% {
+        transform: rotate(15deg) scale(1.1);
+    }
+    50% {
+        transform: rotate(-15deg) scale(1.1);
+    }
+    75% {
+        transform: rotate(15deg) scale(1.1);
+    }
+    100% {
+        transform: rotate(0deg) scale(1);
+    }
+}
+
 .navbar {
     display: flex;
     flex-direction: row;
@@ -96,48 +190,6 @@ body {
     color: var(--main);
     position: relative;
     animation: slideInRight 2s forwards;
-}
-
-@keyframes slideInRight {
-    from {
-        right: -20%;
-        opacity: 0;
-    }
-    to {
-        right: 0;
-        opacity: 1;
-    }
-}
-
-@keyframes slideInLeft {
-    from {
-        left: -20%;
-        opacity: 0;
-    }
-    to {
-        left: 0;
-        opacity: 1;
-    }
-}
-
-@keyframes appear {
-    0% {
-        opacity: 0;          
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes appearImages {
-    from {
-        opacity: 0;
-        transform: scale(0.4);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
 }
 
 .subtitle {
@@ -455,61 +507,9 @@ input::placeholder {
     align-items: center;
     height: 20px;
 }  
-  
-@keyframes slideInDown {
-    0% {
-        top: -30%; 
-        opacity: 0;
-    }
-    30% {
-        top: 0; 
-        opacity: 1;
-    }
-    70% {
-        top: 0; 
-        opacity: 1;
-    }
-    100% {
-        top: 0; 
-        opacity: 0;
-    }
-}
-
-@keyframes rotateAndMove {
-    0% {
-        transform: rotate(0deg) translateX(0);
-    }
-    25% {
-        transform: rotate(-20deg); 
-    }
-    50% {
-        transform: rotate(0deg); 
-    }
-    100% {
-        transform: rotate(0deg) translateX(100vw);
-    }
-}
 
 .submit_button_sent {
     animation: rotateAndMove 2s forwards ease-out;
-}
-
-@keyframes rotate {
-    0% {
-        transform: rotate(-15deg) scale(1);
-    }
-    25% {
-        transform: rotate(15deg) scale(1.1);
-    }
-    50% {
-        transform: rotate(-15deg) scale(1.1);
-    }
-    75% {
-        transform: rotate(15deg) scale(1.1);
-    }
-    100% {
-        transform: rotate(0deg) scale(1);
-    }
 }
 
 .submit_button_not_sent {
@@ -527,7 +527,7 @@ input::placeholder {
 .footer_text {
     margin-bottom: 8px;
     font-family: 'Courier New';
-    font-size: min(18px, 1.8vw);
+    font-size: min(15px, 1.8vw);
     color: #ffffff;
 }
 
@@ -585,6 +585,21 @@ input::placeholder {
         -moz-box-shadow: 7px 7px 27px 0px rgba(0,0,0,0.11);
         box-shadow: 7px 7px 27px 0px rgba(0,0,0,0.11);
         animation: slideInLeft 2s forwards;
+    }
+
+    .media {
+        display: flex;
+        flex-direction: row;
+        height: 6vw;
+        justify-content: center;
+        gap: 1.5vw;
+    }
+    
+    .media_icon1, .media_icon2, .media_icon3 {
+        display: inline-block;
+        width: 8vw;
+        height: auto;
+        cursor: pointer;
     }
 
     .subtitle {
@@ -737,12 +752,13 @@ input::placeholder {
         flex-direction: row;
         justify-content:center;
         align-items: flex-end;
+        padding: 5px
     }
     
     .footer_text {
         margin-bottom: 8px;
         font-family: 'Courier New';
-        font-size: 15px;
+        font-size: 13px;
         color: #ffffff;
     }
 }

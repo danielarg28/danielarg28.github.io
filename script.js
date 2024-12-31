@@ -60,6 +60,7 @@ window.onload = function () {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+  if (window.innerWidth > 600){
   const instagramImage = document.getElementById('instagram');
   const behanceImage = document.getElementById('behance');
   const roverImage = document.getElementById('rover');
@@ -71,4 +72,5 @@ document.addEventListener('DOMContentLoaded', () => {
       behanceImage.classList.remove('media_icon2');
       roverImage.classList.remove('media_icon3');
     }, 2000);
+  }
   });
