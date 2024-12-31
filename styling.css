@@ -421,6 +421,7 @@ body {
 
 .name_input {
     width: 25vw;
+    color: var(--main);
     font-size: 16px; 
     font-family: 'Courier New', Courier, monospace;
     height: max(2.5vw,3vh);
@@ -433,6 +434,7 @@ body {
 
 .email_input {
     width: 25vw;
+    color: var(--main);
     font-size: 16px; 
     font-family: 'Courier New', Courier, monospace;
     height: max(2.5vw,3vh);
@@ -445,6 +447,7 @@ body {
 
 .message_input {
     width: 88vw;
+    color: var(--main);
     font-size: 16px; 
     font-family: 'Courier New', Courier, monospace;
     height: max(5vw,6vh);
